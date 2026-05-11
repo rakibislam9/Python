@@ -19,3 +19,13 @@ class Bus(Vehicle):
 school_bus = Bus('School bus', 10, 50)
 
 print(f'Name: {school_bus.name}, Fare: {school_bus.fare()}')
+
+
+class Bus(Vehicle):
+    def fare(self):
+        amount = super().fare()
+        amount += amount * 0.10
+        return amount
+
+school_bus = Bus('School bus', 12, 50)
+print(f'Total Bus fare is: {school_bus.fare()}')
